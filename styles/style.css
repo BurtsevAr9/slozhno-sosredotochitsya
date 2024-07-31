@@ -163,10 +163,6 @@
   text-decoration: none;
 }
 
-.text-link:hover {
-  border-block-end: 1px solid var(--main-text-color);
-}
-
 .text-link:focus-visible {
   outline: 1px solid var(--main-text-color);
 }

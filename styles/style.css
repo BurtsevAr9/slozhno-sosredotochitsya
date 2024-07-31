@@ -8,6 +8,7 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  background-color: var(--main-background-color);
 }
 
 .wrapper {
@@ -15,6 +16,7 @@
 }
 
 .header {
+  position: relative;
   height: 100vh;
   display: grid;
   grid-template-rows: 1fr auto 1fr;
@@ -24,8 +26,8 @@
 
 .decorated-zone::before {
   position: absolute;
-  justify-self: end;
-  align-self: start;
+  top: clamp(0.625rem, 0.029rem + 2.545vw, 1.25rem);
+  right: clamp(0.625rem, 0.029rem + 2.545vw, 1.25rem);
   content: '';
   inline-size: 25px;
   block-size: 25px;
@@ -35,8 +37,8 @@
 
 .decorated-zone::after {
   position: absolute;
-  justify-self: start;
-  align-self: end;
+  bottom: clamp(0.625rem, 0.029rem + 2.545vw, 1.25rem);
+  left: clamp(0.625rem, 0.029rem + 2.545vw, 1.25rem);
   content: '';
   inline-size: 25px;
   block-size: 25px;
@@ -47,7 +49,8 @@
 .decorated-element {
   position: absolute;
   align-self: start;
-  right: 19px;
+  top: clamp(0.625rem, 0.029rem + 2.545vw, 1.25rem);
+  right: clamp(1.25rem, 0.654rem + 2.545vw, 1.875rem);
   color: var(--accent-color);
   line-height: 25px;
 }
@@ -71,13 +74,14 @@
 }
 
 .header__theme-menu-button {
-  border: none;
+  border: 1px solid transparent;
   background-color: transparent;
   color: var(--accent-color);
   font-size: inherit;
   text-transform: lowercase;
   padding: 1px 13px 5px 13px;
   line-height: 100%;
+  cursor: pointer;
 }
 
 .header__theme-menu-button:hover {
@@ -137,7 +141,7 @@
   font-size: 18px;
 }
 
-.main__section-list {
+.main__section-content {
   display: grid;
   gap: 20px;
 }
@@ -180,9 +184,9 @@
 }
 
 .main__section-text-accent {
+  font-size: 18px;
   color: var(--text-accent-color);
   font-weight: bold;
-  margin-block-end: 10px;
 }
 
 .main__section-photo {
@@ -197,6 +201,7 @@
 }
 
 .footer {
+  position: relative;
   display: grid;
   justify-items: center;
   align-items: center;
@@ -204,8 +209,12 @@
   background-color: var(--main-background-color);
 }
 
-.section-gallry-margin {
+.main__section-gallery {
   margin-block-end: clamp(1.875rem, 1.279rem + 2.545vw, 2.5rem);
+}
+
+.main__section-gallery .main__section-text-accent {
+  margin-block-end: 10px;
 }
 
 .footer__title {
@@ -219,10 +228,6 @@
 @media (min-width: 768px) {
   .wrapper {
     padding: 20px;
-  }
-
-  .decorated-element {
-    right: 29px;
   }
 
   .header__title {
@@ -284,7 +289,7 @@
     flex-direction: row;
   }
 
-  .main__section-list_midle {
+  .main__section-content_midle {
     grid-template-columns: repeat(3, 1fr);
   }
 }

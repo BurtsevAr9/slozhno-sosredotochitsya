@@ -11,6 +11,10 @@
   background-image: url(../images/cover-image-light.png);
 }
 
+.theme_light .decorated-element {
+  display: none;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     --accent-color: #353430;
@@ -25,4 +29,9 @@
   .page.theme_auto {
     background-image: url(../images/cover-image-light.png);
   }
+
+  .theme_auto .decorated-element {
+    display: none;
+  }
+  
 }

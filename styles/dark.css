@@ -10,3 +10,9 @@
   --fonts: 'IBM Plex mono';
   --main-background-color: #000028;
 }
+
+@media (prefers-color-scheme: dark) {
+  .theme_auto .decorated-element {
+    display: block;
+  } 
+}

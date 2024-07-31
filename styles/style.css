@@ -164,8 +164,7 @@
 }
 
 .text-link:hover {
-  text-decoration: underline 1px solid var(--main-text-color);
-  text-underline-offset: 2px;
+  border-block-end: 1px solid var(--main-text-color);
 }
 
 .text-link:focus-visible {
